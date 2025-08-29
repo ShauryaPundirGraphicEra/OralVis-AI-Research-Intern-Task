@@ -1,5 +1,8 @@
 # Dental X-Ray Tooth Detection with YOLOv11m
 
+
+Training weights (best.pt) Model:- ` https://drive.google.com/file/d/1nfWBHNkVPV69fZ7AsX1y72ZwlRf47Fgl/view?usp=sharing`
+
 This repository contains the implementation and results of a YOLOv11m model trained to detect and classify 32 tooth types (using FDI notation) in dental X-ray images. The project was developed to meet a 48-hour deadline, concluding by 07:53 PM IST on Sunday, August 31, 2025.
 
 ## Project Overview
@@ -88,7 +91,7 @@ The model was trained in three stages using the YOLOv11m architecture:
 - **Purpose**: Enhanced performance on challenging classes.
 - **Final Model**: Achieved P=0.915, R=0.921, mAP50=0.959, mAP50-95=0.801.
 
-Training logs and weights are saved in `/content/runs/detect/train`, `train3`, and `train6` directories.
+Training weights (best.pt) Model:- ` https://drive.google.com/file/d/1nfWBHNkVPV69fZ7AsX1y72ZwlRf47Fgl/view?usp=sharing`
 
 ## Evaluation
 
@@ -99,7 +102,7 @@ Training logs and weights are saved in `/content/runs/detect/train`, `train3`, a
   print("Validation Metrics:", metrics_val.box.map, metrics_val.box.map50, metrics_val.box.map75)
   ```
 - **Results**: P=0.921, R=0.916, mAP50=0.959, mAP50-95=0.803
-- **Confusion Matrix**: Saved in `/content/runs/detect/val/confusion_matrix.png`.
+
 
 ### Test
 - **Command**:
@@ -108,7 +111,7 @@ Training logs and weights are saved in `/content/runs/detect/train`, `train3`, a
   print("Test Metrics:", metrics_test.box.map, metrics_test.box.map50, metrics_test.box.map75)
   ```
 - **Results**: P=0.941, R=0.895, mAP50=0.949, mAP50-95=0.745
-- **Confusion Matrix**: Saved in `/content/runs/detect/train66/confusion_matrix.png`.
+
 
 ### Sample Predictions
 - **Command**:
@@ -119,37 +122,25 @@ Training logs and weights are saved in `/content/runs/detect/train`, `train3`, a
   ```
 - **Output**: 3 annotated images with bounding boxes in `/content/runs/detect/predict/`.
 
-## Post-Processing
-To address anatomical correctness and class-specific issues (e.g., Central Incisor (41) at 0.631 mAP@50-95):
-- **Code**:
-  ```python
-  for result in pred_results:
-      boxes = result.boxes.xyxy.cpu().numpy()
-      centers_y = (boxes[:, 1] + boxes[:, 3]) / 2
-      median_y = np.median(centers_y)
-      upper = boxes[centers_y < median_y]
-      lower = boxes[centers_y >= median_y]
-      # Sort by x, adjust FDI IDs
-  ```
+
 
 ## Submission
 
 ### GitHub Repository
 - **Contents**:
-  - Training notebook (e.g., `train.ipynb`).
-  - `dataset.yaml` configuration file.
-  - This `README.md` file.
+  - Training notebook:- `https://github.com/ShauryaPundirGraphicEra/OralVis-AI-Research-Intern-Task/blob/main/AI_Intern_Task_Submission_by_Shaurya_Pundir.ipynb`
+  - Dataset with data.yaml file:-  `https://drive.google.com/drive/folders/1mC_NtELmEVCoU26WP3Ozdr-vsQxerACG?usp=sharing`
 - **Instructions**: Clone the repo and run the notebook in Colab with the specified environment.
 
 ### Word Document
 - **Components**:
-  - **Confusion Matrix**: Test matrix from `/content/runs/detect/train66/confusion_matrix.png`.
   - **Metrics**:
     - Validation: P=0.921, R=0.916, mAP@50=0.959, mAP@50-95=0.803
     - Test: P=0.941, R=0.895, mAP@50=0.949, mAP@50-95=0.745
   - **Summary**: "Trained YOLOv11m with 90 epochs, achieving mAP@50-95 of 0.803 on validation and 0.745 on test. The confusion matrix shows strong overall performance with minor incisor confusion, addressed via post-processing."
   - **Sample Predictions**: 3 images from `/content/runs/detect/predict/`.
-  - **GitHub Link**: [Insert repo URL].
+  - Report File:- `https://docs.google.com/document/d/1VrP82SXDUEnqJqOlUOHVwQ13enyxL8rX/edit?usp=sharing&ouid=112297003535098283758&rtpof=true&sd=true`
+
 - **Download**:
   ```python
   !zip -r results.zip /content/runs
@@ -157,13 +148,6 @@ To address anatomical correctness and class-specific issues (e.g., Central Incis
   files.download('results.zip')
   ```
 
-## Timeline
-- **Start**: August 29, 2025, 07:53 PM IST
-- **Deadline**: August 31, 2025, 07:53 PM IST
-- **Tasks**:
-  - Review and prepare submission by 08:20 PM IST, August 29.
-  - Finalize and upload by 07:00 PM IST, August 30.
-  - Submit by 07:53 PM IST, August 31.
 
 ## Acknowledgments
 Thanks to the Ultralytics team for YOLOv11m and Google Colab for computational resources.
