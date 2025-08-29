@@ -1,7 +1,7 @@
 # Dental X-Ray Tooth Detection with YOLOv11m
 
 
-Training weights (best.pt) Model:- ` https://drive.google.com/file/d/1nfWBHNkVPV69fZ7AsX1y72ZwlRf47Fgl/view?usp=sharing`
+Training weights (best.pt) Model:- https://drive.google.com/file/d/1nfWBHNkVPV69fZ7AsX1y72ZwlRf47Fgl/view?usp=sharing
 
 This repository contains the implementation and results of a YOLOv11m model trained to detect and classify 32 tooth types (using FDI notation) in dental X-ray images. The project was developed to meet a 48-hour deadline, concluding by 07:53 PM IST on Sunday, August 31, 2025.
 
@@ -91,7 +91,7 @@ The model was trained in three stages using the YOLOv11m architecture:
 - **Purpose**: Enhanced performance on challenging classes.
 - **Final Model**: Achieved P=0.915, R=0.921, mAP50=0.959, mAP50-95=0.801.
 
-Training weights (best.pt) Model:- ` https://drive.google.com/file/d/1nfWBHNkVPV69fZ7AsX1y72ZwlRf47Fgl/view?usp=sharing`
+Training weights (best.pt) Model:- https://drive.google.com/file/d/1nfWBHNkVPV69fZ7AsX1y72ZwlRf47Fgl/view?usp=sharing
 
 ## Evaluation
 
@@ -128,8 +128,8 @@ Training weights (best.pt) Model:- ` https://drive.google.com/file/d/1nfWBHNkVPV
 
 ### GitHub Repository
 - **Contents**:
-  - Training notebook:- `https://github.com/ShauryaPundirGraphicEra/OralVis-AI-Research-Intern-Task/blob/main/AI_Intern_Task_Submission_by_Shaurya_Pundir.ipynb`
-  - Dataset with data.yaml file:-  `https://drive.google.com/drive/folders/1mC_NtELmEVCoU26WP3Ozdr-vsQxerACG?usp=sharing`
+  - Training notebook:- https://github.com/ShauryaPundirGraphicEra/OralVis-AI-Research-Intern-Task/blob/main/AI_Intern_Task_Submission_by_Shaurya_Pundir.ipynb
+  - Dataset with data.yaml file:-  https://drive.google.com/drive/folders/1mC_NtELmEVCoU26WP3Ozdr-vsQxerACG?usp=sharing
 - **Instructions**: Clone the repo and run the notebook in Colab with the specified environment.
 
 ### Word Document
@@ -139,7 +139,7 @@ Training weights (best.pt) Model:- ` https://drive.google.com/file/d/1nfWBHNkVPV
     - Test: P=0.941, R=0.895, mAP@50=0.949, mAP@50-95=0.745
   - **Summary**: "Trained YOLOv11m with 90 epochs, achieving mAP@50-95 of 0.803 on validation and 0.745 on test. The confusion matrix shows strong overall performance with minor incisor confusion, addressed via post-processing."
   - **Sample Predictions**: 3 images from `/content/runs/detect/predict/`.
-  - Report File:- `https://docs.google.com/document/d/1VrP82SXDUEnqJqOlUOHVwQ13enyxL8rX/edit?usp=sharing&ouid=112297003535098283758&rtpof=true&sd=true`
+  - Report File:- https://docs.google.com/document/d/1VrP82SXDUEnqJqOlUOHVwQ13enyxL8rX/edit?usp=sharing&ouid=112297003535098283758&rtpof=true&sd=true
 
 - **Download**:
   ```python
